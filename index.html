@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gadich Store - Интернет-магазин электроники</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-top">
+                <div class="logo">
+                    <h1>Gadich Store</h1>
+                    <p class="tagline">Электроника и гаджеты</p>
+                </div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Поиск товаров..." id="searchInput">
+                    <button class="search-btn" onclick="searchProducts()">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M9 17A8 8 0 1 0 9 1a8 8 0 0 0 0 16zM18 18l-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="header-actions">
+                    <button class="icon-btn" onclick="toggleCart()">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M9 2L7 6H3l3 9h12l3-9h-4l-2-4H9z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                            <circle cx="9" cy="20" r="1" fill="currentColor"/>
+                            <circle cx="18" cy="20" r="1" fill="currentColor"/>
+                        </svg>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                </div>
+            </div>
+            <nav class="nav">
+                <a href="#" class="nav-link active" onclick="showCategory('all')">Все товары</a>
+                <a href="#" class="nav-link" onclick="showCategory('phones')">Смартфоны</a>
+                <a href="#" class="nav-link" onclick="showCategory('laptops')">Ноутбуки</a>
+                <a href="#" class="nav-link" onclick="showCategory('sale')">Акции</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2 class="hero-title">Новинки электроники</h2>
+                <p class="hero-subtitle">Смартфоны и ноутбуки по лучшим ценам</p>
+                <button class="btn-primary" onclick="scrollToProducts()">Смотреть каталог</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title">Категории</h2>
+            <div class="category-grid">
+                <div class="category-card" onclick="showCategory('phones')">
+                    <div class="category-icon">📱</div>
+                    <h3>Смартфоны</h3>
+                    <p>Более 50 моделей</p>
+                </div>
+                <div class="category-card" onclick="showCategory('laptops')">
+                    <div class="category-icon">💻</div>
+                    <h3>Ноутбуки</h3>
+                    <p>Для работы и игр</p>
+                </div>
+                <div class="category-card" onclick="showCategory('sale')">
+                    <div class="category-icon">🔥</div>
+                    <h3>Акции</h3>
+                    <p>Скидки до 30%</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products -->
+    <section class="products" id="productsSection">
+        <div class="container">
+            <h2 class="section-title">Каталог товаров</h2>
+            <div class="product-grid" id="productGrid">
+                <!-- Products will be inserted here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Корзина</h3>
+            <button class="close-btn" onclick="toggleCart()">✕</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p class="empty-cart">Корзина пуста</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Итого:</span>
+                <span id="cartTotal">0 ᵴ</span>
+            </div>
+            <button class="btn-primary btn-full" onclick="checkout()">Оформить заказ</button>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay" onclick="toggleCart()"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Gadich Store</h4>
+                    <p>Интернет-магазин электроники и гаджетов</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Покупателям</h4>
+                    <a href="#">Доставка</a>
+                    <a href="#">Оплата</a>
+                    <a href="#">Гарантия</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Контакты</h4>
+                    <a href="">gadichstore@europe.com</a>
+					<a href="">Discord: gadichstore</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Gadich Store. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
